@@ -98,6 +98,7 @@ function addScrollAnimationClasses() {
 // Contact Form Handling
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const recipientEmail = 'elliotd@sinisterdmtools.com';
     
     // Get form data
     const formData = new FormData(contactForm);
@@ -117,8 +118,16 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
     
-    // Simulate form submission (replace with actual form handling)
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+    const emailSubject = encodeURIComponent(`[Portfolio Contact] ${subject}`);
+    const emailBody = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n\n` +
+        `${message}`
+    );
+
+    // Opens the user's default mail client with a pre-filled draft.
+    window.location.href = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
+    showNotification('Opening your email app to send the message.', 'success');
     contactForm.reset();
 });
 

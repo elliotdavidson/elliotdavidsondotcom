@@ -105,6 +105,10 @@ The contact form includes:
 - Email format validation
 - Success/error notifications
 
+## TODO
+
+- Set up Brevo integration so the contact form sends email directly from the page without relying on a local mail client.
+
 **Note**: To make the form functional, you'll need to add server-side processing or use a service like Formspree, Netlify Forms, or EmailJS.
 
 ## SEO Features
