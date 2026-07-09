@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elliotdavidson.github.io/elliotdavidsondotcom/sitemap.xml

@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elliot Davidson - Portfolio & Resume</title>
-    <meta name="description" content="Elliot Davidson's professional portfolio and online resume showcasing skills, projects, and experience.">
+    <title>Elliot Davidson | Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Elliot Davidson, a full-stack developer building practical web applications and support platforms with JavaScript, C#, SQL Server, and PostgreSQL.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Elliot Davidson">
+    <meta name="keywords" content="Elliot Davidson, developer portfolio, full-stack developer, JavaScript, C#, SQL Server, PostgreSQL, web development">
+    <meta name="theme-color" content="#87CEEB">
+    <!-- Switch these URLs to https://elliotdavidson.com/ after DNS transfer is complete. -->
+    <link rel="canonical" href="https://elliotdavidson.github.io/elliotdavidsondotcom/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Elliot Davidson | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Explore projects by Elliot Davidson, including SinisterDMTools, Clean and Green Website, and SchoolHelpDesk.">
+    <meta property="og:url" content="https://elliotdavidson.github.io/elliotdavidsondotcom/">
+    <meta property="og:site_name" content="Elliot Davidson Portfolio">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Elliot Davidson | Full-Stack Developer Portfolio">
+    <meta name="twitter:description" content="Full-stack portfolio featuring web and data-driven projects by Elliot Davidson.">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Elliot Davidson",
+            "url": "https://elliotdavidson.github.io/elliotdavidsondotcom/",
+            "jobTitle": "Full-Stack Developer",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Rockport",
+                "addressRegion": "Texas",
+                "addressCountry": "US"
+            },
+            "email": "mailto:elliotd@sinisterdmtools.com",
+            "knowsAbout": [
+                "JavaScript",
+                "C#",
+                "SQL Server",
+                "PostgreSQL",
+                "Web Development"
+            ]
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home">Elliot Davidson</a>
@@ -41,11 +81,12 @@
         </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-labelledby="hero-title">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">
+                <h1 id="hero-title" class="hero-title">
                     Hi, I'm <span class="highlight">Elliot Davidson</span>
                 </h1>
                 <p class="hero-subtitle">
@@ -65,9 +106,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 id="about-title" class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -100,9 +141,9 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills" aria-labelledby="skills-title">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 id="skills-title" class="section-title">Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Frontend</h3>
@@ -138,9 +179,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 id="projects-title" class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
@@ -157,8 +198,8 @@
                             <span>CSS3</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <a href="www.sinisterdmtools.com" class="project-link">Live Demo</a>
+                            <!--<a href="#" class="project-link">GitHub</a>-->
                         </div>
                     </div>
                 </div>
@@ -178,8 +219,8 @@
                             <span>CSS3</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <a href="https://cleangreenlawncarellc.com/" class="project-link">Live Demo</a>
+                            <!--<a href="#" class="project-link">GitHub</a>-->
                         </div>
                     </div>
                 </div>
@@ -199,8 +240,8 @@
                             <span>Bootstrap</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <!--<a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>-->
                         </div>
                     </div>
                 </div>
@@ -209,9 +250,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 id="contact-title" class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
@@ -222,7 +263,7 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>elliotd@sinisterdmtools.com</span>
+                            <a href="mailto:elliotd@sinisterdmtools.com">elliotd@sinisterdmtools.com</a>
                         </div>
                         <!--<div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -270,6 +311,7 @@
             <p>&copy; 2024 Elliot Davidson. All rights reserved.</p>
         </div>
     </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
