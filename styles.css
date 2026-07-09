@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Segoe UI Variable", "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
@@ -18,8 +18,8 @@ body {
 
 /* CSS Variables for Light Blue Color Scheme */
 :root {
-    --primary-color: #87CEEB;        /* Sky Blue */
-    --primary-dark: #5DADE2;         /* Darker Sky Blue */
+    --primary-color: #1f7ea8;        /* Accessible Blue */
+    --primary-dark: #155f7f;         /* Darker Accessible Blue */
     --primary-light: #E8F4FD;        /* Very Light Blue */
     --secondary-color: #2C3E50;      /* Dark Blue-Gray */
     --accent-color: #3498DB;         /* Bright Blue */
@@ -184,7 +184,14 @@ body {
     transform: translateY(-10px);
 }
 
-.hero-image-placeholder i {
+.icon-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.icon-hero {
     font-size: 8rem;
     color: var(--primary-color);
 }
@@ -260,7 +267,7 @@ section {
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    color: var(--text-color);
     line-height: 1.8;
 }
 
@@ -379,7 +386,7 @@ section {
     justify-content: center;
 }
 
-.project-image-placeholder i {
+.project-image-placeholder .icon-symbol {
     font-size: 3rem;
     color: var(--primary-color);
 }
@@ -465,7 +472,7 @@ section {
     color: var(--text-light);
 }
 
-.contact-item i {
+.icon-contact {
     color: var(--primary-color);
     width: 20px;
 }
@@ -585,7 +592,7 @@ section {
         height: 250px;
     }
 
-    .hero-image-placeholder i {
+    .icon-hero {
         font-size: 6rem;
     }
 

@@ -3,6 +3,16 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const contactForm = document.querySelector('.contact-form');
+const sections = document.querySelectorAll('section');
+let sectionMetrics = [];
+
+function cacheSectionMetrics() {
+    sectionMetrics = Array.from(sections).map(section => ({
+        id: section.getAttribute('id'),
+        top: section.offsetTop,
+        bottom: section.offsetTop + section.offsetHeight
+    }));
+}
 
 // Mobile Navigation Toggle
 hamburger.addEventListener('click', () => {
@@ -37,15 +47,12 @@ navLinks.forEach(link => {
 
 // Active Navigation Link Highlighting
 function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section');
     const scrollPos = window.scrollY + 100;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+    sectionMetrics.forEach(section => {
+        const sectionId = section.id;
         
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        if (scrollPos >= section.top && scrollPos < section.bottom) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${sectionId}`) {
@@ -340,7 +347,7 @@ function toggleScrollToTopButton() {
 function createScrollToTopButton() {
     const scrollButton = document.createElement('button');
     scrollButton.className = 'scroll-to-top';
-    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollButton.innerHTML = '&#8593;';
     scrollButton.onclick = scrollToTop;
     
     scrollButton.style.cssText = `
@@ -370,7 +377,6 @@ function createScrollToTopButton() {
 window.addEventListener('scroll', () => {
     updateActiveNavLink();
     updateNavbarBackground();
-    animateOnScroll();
     toggleScrollToTopButton();
     // parallaxEffect(); // Uncomment for parallax effect
 });
@@ -379,10 +385,12 @@ window.addEventListener('resize', () => {
     // Close mobile menu on resize
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    cacheSectionMetrics();
 });
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    cacheSectionMetrics();
     addScrollAnimationClasses();
     setupIntersectionObserver();
     createScrollToTopButton();
